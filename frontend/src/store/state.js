@@ -5,5 +5,5 @@ export default {
   stateDetail: [],
   stateCounties: [],
   countyPopulation: 0,
-  selectedState: ""
+  highlitedStates: []
 }

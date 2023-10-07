@@ -11,13 +11,12 @@ export function searchStates({ commit }) {
 export function searchStateDetail({ commit }, state) {
   axiosClient.get(`/states/${state}`)
     .then(({ data }) => {
-      console.log(data.detail[0])
-      commit('setStateDetails', data.detail[0])
+      commit('setStateDetails', data.detail)
     })
 }
 
 export function searchStateCounties({ commit }, state) {
-  axiosClient.get(`/states/${state}/details`)
+  axiosClient.get(`/states/${state}/detail`)
     .then(({ data }) => {
       commit('setStateCounties', data.stateCounties)
     })

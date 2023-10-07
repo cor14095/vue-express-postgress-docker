@@ -1,5 +1,5 @@
 /**
- * This file is a very profesion way I found compiling multiple sources
+ * This file is a very profesional way I found compiling multiple sources
  * It's optimized for docker and utilize the compose parameters.
  * 
  */

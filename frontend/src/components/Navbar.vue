@@ -27,7 +27,7 @@
             </div>
             <div class="flex-auto">
               <a href="https://vuejs.org/" target="_blank" class="block text-base font-semibold text-gray-900">
-                Postgress
+                Postgres
               </a>
             </div>
           </div>

@@ -17,3 +17,12 @@ export function setStateCounties(state, counties) {
 export function setStateCountiesPopulation(state, population) {
   state.countyPopulation = population || 0
 }
+
+export function addDeleteHighlitedState(state, selection) {
+  if (!state.highlitedStates.includes(selection)) {
+    state.highlitedStates.push(selection)
+  } else {
+    const index = state.highlitedStates.indexOf(selection)
+    state.highlitedStates.splice(index, 1)
+  }
+}
