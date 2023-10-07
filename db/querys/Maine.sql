@@ -1,0 +1,17 @@
+﻿INSERT INTO maine (county,population) VALUES 
+('Androscoggin County',107604),
+('Aroostook County',70055),
+('Cumberland County',285456),
+('Franklin County',30495),
+('Hancock County',54845),
+('Kennebec County',121164),
+('Knox County',39550),
+('Lincoln County',34088),
+('Oxford County',57277),
+('Penobscot County',153364),
+('Piscataquis County',17124),
+('Sagadahoc County',35013),
+('Somerset County',51706),
+('Waldo County',38940),
+('Washington County',32190),
+('York County',199431);

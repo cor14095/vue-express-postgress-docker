@@ -1,0 +1,18 @@
+﻿INSERT INTO nevada (county,population) VALUES 
+('Carson City',54080),
+('Churchill County',24063),
+('Clark County',2027868),
+('Douglas County',47118),
+('Elko County',52384),
+('Esmeralda County',832),
+('Eureka County',2076),
+('Humboldt County',17363),
+('Lander County',6032),
+('Lincoln County',5245),
+('Lyon County',51557),
+('Mineral County',4614),
+('Nye County',42297),
+('Pershing County',6877),
+('Storey County',3942),
+('Washoe County',433731),
+('White Pine County',10057);

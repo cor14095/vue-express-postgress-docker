@@ -1,0 +1,16 @@
+﻿INSERT INTO arizona (county,population) VALUES 
+('Apache County',71934),
+('Cochise County',129473),
+('Coconino County',136539),
+('Gila County',53053),
+('Graham County',37482),
+('Greenlee County',9049),
+('La Paz County',20324),
+('Maricopa County',4009412),
+('Mohave County',203030),
+('Navajo County',107322),
+('Pima County',996554),
+('Pinal County',389350),
+('Santa Cruz County',46768),
+('Yavapai County',215133),
+('Yuma County',201201);

@@ -1,0 +1,15 @@
+﻿INSERT INTO massachusetts (county,population) VALUES 
+('Barnstable County',214990),
+('Berkshire County',129585),
+('Bristol County',552780),
+('Dukes County',17256),
+('Essex County',762550),
+('Franklin County',71221),
+('Hampden County',467319),
+('Hampshire County',159596),
+('Middlesex County',1552802),
+('Nantucket County',10399),
+('Norfolk County',687802),
+('Plymouth County',501915),
+('Suffolk County',755503),
+('Worcester County',809106);

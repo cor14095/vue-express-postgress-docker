@@ -1,0 +1,77 @@
+services:
+  backend:
+    build:
+      args:
+        - NODE_ENV=development
+      context: backend
+      target: development
+    container_name: express_docker
+    command: npm run start-watch
+    environment:
+      - DATABASE_DB=states
+      - DATABASE_USER=root
+      - DATABASE_PASSWORD=root
+      - DATABASE_HOST=db
+      - NODE_ENV=development
+    ports:
+      - 8000:8000
+      - 9229:9229
+      - 9230:9230
+    volumes:
+      - ./backend/src:/code/src:ro
+      - ./backend/package.json:/code/package.json
+      - ./backend/package-lock.json:/code/package-lock.json
+      - back-notused:/opt/app/node_modules
+    networks:
+      - public
+      - private
+    depends_on:
+      - db
+  db:
+    container_name: postgres_container
+    image: postgres:latest
+    restart: always
+    volumes:
+      - db-data:/var/lib/postgres
+      - ./db/querys:/docker-entrypoint-initdb.d
+    networks:
+      - private
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_DB: states
+    ports:
+      - "5055:5432"
+  frontend:
+    build:
+      context: frontend
+      target: development
+    image: node:latest
+    container_name: vite_vue_docker
+    ports:
+      - 3000:3000
+      - 8080:80
+    volumes:
+      - ./frontend/src:/code/src
+      - /code/node_modules
+    networks:
+      - public
+    tty: true
+# PGAdming is for debugging/testing purpose, no need to deploy it every time. 
+#  pgadmin:
+#    container_name: pgadmin4_container
+#    image: dpage/pgadmin4:latest
+#    restart: always
+#    environment:
+#      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+#      PGADMIN_DEFAULT_PASSWORD: root
+#    ports:
+#      - "5050:80"
+#    depends_on:
+#      - db
+networks:
+  public:
+  private:
+volumes:
+  back-notused:
+  db-data:

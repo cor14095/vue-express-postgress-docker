@@ -1,0 +1,15 @@
+﻿INSERT INTO vermont (county,population) VALUES 
+('Addison County',36791),
+('Bennington County',36659),
+('Caledonia County',31157),
+('Chittenden County',159515),
+('Essex County',6211),
+('Franklin County',48294),
+('Grand Isle County',6987),
+('Lamoille County',25067),
+('Orange County',28915),
+('Orleans County',27169),
+('Rutland County',60622),
+('Washington County',59319),
+('Windham County',43857),
+('Windsor County',56067);
