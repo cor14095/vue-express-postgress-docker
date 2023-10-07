@@ -1,17 +1,13 @@
 
 <template>
   <div class="grid grid-cols-1 w-full h-[40vh] overflow-y-auto rounded border-2 p-4">
-    Lorem ipsum
+    <pre>{{ selectedState }}</pre>
   </div>
 </template>
 
 <script setup>
+import store from '../store';
 
-const { element } = defineProps({
-  element: {
-    required: true,
-    type: String,
-  }
-})
+const selectedState = computed(() => store.state.stateDetail)
 
 </script>

@@ -1,17 +1,17 @@
 <template>
   <div class="container mx-auto px-4">
     <div class="flex flex-col p-8 justify-center">
-      <input type="text" class="rounded border-2 border-gray-200 w-full" placeholder="Search states" />
+      <SearchBar />
 
       <div class="flex flex-row gap-4 py-4">
         <div class="basis-1/4 overflow-auto">
           <ScrollList :elements="states"/>
         </div>
         <div class="basis-1/4 overflow-auto">
-          <ScrollList :elements="states"/>
+          <ScrollList :elements="filteredStates"/>
         </div>
         <div class="basis-1/2 overflow-auto">
-          <DetailView :element="selectedState"/>
+          <DetailView />
         </div>
       </div>
     </div>
@@ -19,17 +19,17 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from 'vue';
-import axiosClient from '../axiosClient.js'
+import { computed, onMounted } from 'vue';
 import ScrollList from '../components/ScrollList.vue';
 import DetailView from '../components/DetailView.vue';
+import SearchBar from '../components/SearchBar.vue';
+import store from '../store';
 
-const states = ref([]);
-const selectedState = ""
+const states = computed(() => store.state.states)
+const filteredStates = computed(() => store.state.filteredStates)
 
-onMounted(async () => {
-  const response = await axiosClient.get('/states')
-  states.value = response.data.rows
+onMounted(() => {
+  store.dispatch("searchStates")
 })
 
 </script>

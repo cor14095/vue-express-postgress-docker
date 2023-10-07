@@ -1,5 +1,5 @@
 const app = require("./server");
-var cors = require('cors');
+const cors = require('cors');
 const { port } = require("./config");
 
 // CORS workaround for localhost.

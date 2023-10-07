@@ -56,9 +56,9 @@ app.get("/states/:state", function (req, res, next) {
     .then((result) => {
       res.json({
         message: "Results from: " + req.params.state,
-        states: result
+        detail: result
       });
-      console.log(`Request on: /states/${req.params.state} yielded: ${result.rowCount} results...`)
+      console.log(`Request on: /states/${req.params.state} yielded: ${result.detail} results...`)
     })
     .catch((e) => {
       console.log("Failed to query, see logs.");
@@ -73,7 +73,7 @@ app.get("/states/:state/detail", function (req, res, next) {
     .then((result) => {
       res.json({
         message: "Results from: " + req.params.state,
-        results: result
+        stateCounties: result
       });
       console.log(`Request on: /states/${req.params.state}/detail yielded: ${result.rowCount} results...`)
     })
@@ -90,7 +90,7 @@ app.get("/states/:state/detail/sum", function (req, res, next) {
     .then((result) => {
       res.json({
         message: "Results from: " + req.params.state,
-        results: result
+        populationSum: result
       });
       console.log(`Request on: /states/${req.params.state}/detail/sum yielded: ${result.rowCount} results...`)
     })

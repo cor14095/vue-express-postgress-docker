@@ -1,4 +1,9 @@
 // Exporting the state variables
 export default {
-  states: ["States..."]
+  states: [],
+  filteredStates: [],
+  stateDetail: [],
+  stateCounties: [],
+  countyPopulation: 0,
+  selectedState: ""
 }
